@@ -1,0 +1,27 @@
+BUILD_TIME=`date +"%m%d%y-%k%M%S"`
+
+CC = mips-openwrt-linux-gcc
+
+GSOAP = soapcpp2
+SOAPH = stdsoap2.h
+SOAPC = stdsoap2.c soapC.c
+LIBS = -lm
+#COFLAGS = -Os -lssl -lcrypto -ldl
+COFLAGS = -O0 -Wall -g
+CWFLAGS = 
+CIFLAGS =-I../..
+CMFLAGS =
+CFLAGS = $(CWFLAGS) $(COFLAGS) $(CIFLAGS) $(CMFLAGS)
+LDFLAGS = 
+
+all:soap cpe
+	$(CC) $(LDFLAGS) tr069.o stdsoap2.o soapC.o -o cwmp
+
+soap:
+	$(CC) $(CFLAGS) -c $(SOAPC)
+
+cpe:$(SOAPH) $(SOAPC)
+	$(CC) $(CFLAGS) -c tr069.c $(SOAPC) $(LIBS)
+
+clean:
+		rm -f cwmp *.o

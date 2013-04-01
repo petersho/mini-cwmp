@@ -1,0 +1,12 @@
+1.1 Getting source
+git clone git@192.168.8.168:mini-cwmp.git
+
+1.2 Building
+$ ./configure
+$ make
+You can find cwmp binary in src directory. 
+
+1.3 Cross Compile
+$ ./configure --host=mips-openwrt-linux-uclibc
+$ make
+You can find cwmp binary in src directory.

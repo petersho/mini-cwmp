@@ -1,0 +1,12 @@
+*.o
+cwmp
+
+.cproject
+.project
+.settings/
+
+Makefile
+config.log
+config.status
+src/.deps/
+src/Makefile
