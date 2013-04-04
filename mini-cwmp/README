@@ -1,5 +1,5 @@
 1.1 Getting source
-git clone git@192.168.8.168:mini-cwmp.git
+git://github.com/petersho/mini-cwmp.git
 
 1.2 Building
 $ ./configure

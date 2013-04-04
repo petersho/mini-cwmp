@@ -2,6 +2,7 @@
 #include "soapH.h"
 
 const char server[] = "http://127.0.0.1:3333";
+//const char server[] = "http://acs.gatespace.net/acsadmin/cpeserver";
 
 int Send_Inform_Request(struct soap *soap,
 			struct _cwmp__Inform *Inform,
